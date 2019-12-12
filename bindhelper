@@ -1,0 +1,6 @@
+#!/bin/bash
+echo $$ >> /root/bindhelper.lock
+OPC=$(dialog --backtitle "BindHelper 1.0" --stdout --menu "Selecione uma função:" 0 0 0 "Opções de Zona" '' "Opções de Registro" '' )
+[[ $OPC == "Opções de Zona" ]] && /etc/bindhelper/bindhelper2.sh
+[[ $OPC == "Opções de Registro" ]] && /etc/bindhelper/menur.sh
+[[ $? -ne "0" ]] &&  /etc/bindhelper/exit.sh
