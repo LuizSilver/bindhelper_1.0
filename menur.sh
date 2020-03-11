@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $$ >> /root/bindhelper.lock
-OPC=$(dialog --backtitle "BindHelper 1.0" --stdout --cancel-label "Voltar" --menu "Selecione uma função:" 0 0 0 "Criar Registro" '' "Deletar Registro" '' "Visualizar db" '')
+OPC=$(dialog --backtitle "BindHelper 1.0" --stdout --cancel-label "Back" --menu "Select a function:" 0 0 0 "Create Record" '' "Delete Record" '' "Visualize db" '')
 [[ $? -ne 0 ]] && /bin/bindhelper
-[[ $OPC == "Criar Registro" ]] && /etc/bindhelper/reg.sh
-[[ $OPC == "Deletar Registro" ]] && /etc/bindhelper/rreg.sh
-[[ $OPC == "Visualizar db" ]] && /etc/bindhelper/viewr.sh
+[[ $OPC == "Create Record" ]] && /etc/bindhelper/reg.sh
+[[ $OPC == "Delete Record" ]] && /etc/bindhelper/rreg.sh
+[[ $OPC == "Visualize db" ]] && /etc/bindhelper/viewr.sh
